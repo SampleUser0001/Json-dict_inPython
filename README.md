@@ -1,17 +1,41 @@
-# Template Python on Docker
+# Json-dict inPython
 
-## 使い方
+## 概要
 
-1. Dockerfileのimageを変更する。
-2. 必要に応じてDockerfileにpipを書く。
-3. 必要に応じてdocker-compose.ymlを修正する。
-4. 下記実行。
-    ``` sh
-    docker-compose build
-    docker-compose up
-    ```
+これはdict。(jsonに見えるが。)
+``` python
+sample_dict = {
+  'comment_id' : 'hoge',
+  'ng_channnel' : 'https://www.youtube.com/channel/UC7AagSmHm1myp6_TiGYiNuQ',
+  'ng_comment_pattern' : {
+    'ng_pattern' : '00001',
+    'similarity' : 0.9
+  }
+}
+
+print(type(sample_dict))
+```
+
+## jsonモジュール
+
+### json.dumps(obj)
+
+obj->str変換する。  
+objはdictでもlistでもよい。
+
+### json.loads(file)
+
+json->dict変換する。  
+jsonファイルを読み込んでdictに変換する。
+
+``` python
+with open('../input/sample.json', mode='r') as f:
+  load_json = json.load(f)
+```
+
+### json.load()
 
 ## 参考
 
-- [Qiita:Docker を使う（python のイメージで色々確認してみる）](https://qiita.com/landwarrior/items/fd918da9ebae20486b81)
-- [Future Tech Blog:仕事でPythonコンテナをデプロイする人向けのDockerfile (1): オールマイティ編](https://future-architect.github.io/articles/20200513/)
+- [PythonでJSONファイル・文字列の読み込み・書き込み:note.nkmk.me](https://note.nkmk.me/python-json-load-dump/)
+- [PythonでJSON 読み込み:Qiita](https://qiita.com/kikuchiTakuya/items/53990fca06fb9ba1d8a7)

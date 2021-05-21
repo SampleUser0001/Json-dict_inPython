@@ -1,0 +1,8 @@
+{
+  "comment_id" : "piyo",
+  "ng_channnel" : "https://www.youtube.com/channel/UC7AagSmHm1myp6_TiGYiNuQ",
+  "ng_comment_pattern" : {
+    "ng_pattern" : "00001",
+    "similarity" : 0.9
+  }
+}
